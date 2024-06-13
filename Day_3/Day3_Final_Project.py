@@ -40,11 +40,15 @@ else:
     choice = input()
     if choice.lower() == 'swim':
         print("I wonder how you can survive in front of a group of hungry crocodiles :p. Game over !")
-    else:
+    elif choice.lower() == 'wait':
         print("Great choice ! Now, after reaching out to the other side of the river, there are  small houses in which, rumours says that treasure is hidden somewhere there.")
         print("There are 3 houses : Yellow House, Blue House and a Red House. You have only one choice to pick, which home you feel that the treasure is hiding in there ? Type 'red', 'blue' or 'yellow'." )
         choice = input()
         if choice.lower() == 'yellow' :
             print("Congratulations ! You found the treasure. Now close your eyes, and tells us how you imagined that treasure !")
-        else:
+        elif choice.lower() == 'red' or choice.lower() == 'blue':
             print("Oh no! You just fall in a trap and the doors are locked ! Good luck getting out and Game over !")
+        else:
+            print("We just told you that 3 homes just existed, you can't invent more ! Congratulations for your loss !!!")
+    else:
+        print("There is no way arround, do you know why ? Because someone knew you're looking for the valuable treasure, and they placed bounty at you, and you can't come back to them ! Game over !")
