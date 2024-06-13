@@ -1,5 +1,5 @@
 # Main objective is to build a Tip Calculator using Python, according to the video instructions / Task;
-# Link of the video is : https://www.udemy.com/course/100-days-of-code/learn/lecture/40101144#overview (Course enrolling is mandatory)
+# Link of the video is : https://www.udemy.com/course/100-days-of-code/learn/lecture/17841394#overview (Course enrolling is mandatory)
 
 """ Instructions :
 
