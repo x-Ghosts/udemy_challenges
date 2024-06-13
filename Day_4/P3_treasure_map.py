@@ -30,14 +30,9 @@ elif position[0].upper() == "C":
     position_copy = 2
 else:
     print("Treasure out of map !")
-'''
-if (position[0]) == "A":
-    map[position[0]] = 0
-elif (position[0]) == "B" :
-    map[position[0]] = 1
-elif (position[0]) == "C" :
-    map[position[0]] = 2
-'''
+
+## Removed unneccessary code and recorrected output
+
 map[position_copy][int(position[1])-1] = 'X'
 
 
