@@ -38,25 +38,25 @@ scissors = """
       (____)
 ---.__(___)
 """
-
+images_list = [rock, paper, scissors]
 
 choice_user = int(input("What do you want to choose ? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
 if choice_user == 0:
-    print(rock)
+    print(images_list[0])
 elif choice_user == 1:
-    print(paper)
+    print(images_list[1])
 elif choice_user == 2:
-    print(scissors)
+    print(images_list[2])
 else:
     print("There are no other options.")
 
 choice_machine = random.randint(0,2)
 if choice_machine == 0:
-    print(f"\nComputer Choice: \n{rock}")
+    print(f"\nComputer Choice: \n{images_list[0]}")
 elif choice_machine == 1:
-    print(f"\nComputer Choice: \n{paper}")
+    print(f"\nComputer Choice: \n{images_list[1]}")
 else:
-    print(f"\nComputer Choice: \n{scissors}")
+    print(f"\nComputer Choice: \n{images_list[2]}")
 
 # Interpretation of Wins or Loss :
 
