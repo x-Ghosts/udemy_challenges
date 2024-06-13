@@ -1,5 +1,5 @@
 # Main objective is to build a Body Mass Indicator calculator by using Python, according to the video instructions;
-# Link of the video is : https://www.udemy.com/course/100-days-of-code/learn/lecture/40101120#overview (Course enrolling is mandatory)
+# Link of the video is : https://www.udemy.com/course/100-days-of-code/learn/lecture/40101136#overview (Course enrolling is mandatory)
 
 # Original input (This part is not allowed to be changed)
 height = input() #1.75 as an input
