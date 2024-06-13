@@ -22,11 +22,11 @@ print(type(position[0]))
 print(type(position[1]))
 
 # TIP : Create a copy of position that will hold the index of the the MAP list : MAP[A(position_copy = 0) or B(position_copy = 1) or C(position_copy = 2)][Second String part - 1]
-if position[0] == "A":
+if position[0].upper() == "A":
     position_copy = 0
-elif position[0] == "B":
+elif position[0].upper() == "B":
     position_copy = 1
-elif position[0] == "C":
+elif position[0].upper() == "C":
     position_copy = 2
 else:
     print("Treasure out of map !")
