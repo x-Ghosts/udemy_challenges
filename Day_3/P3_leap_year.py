@@ -5,7 +5,7 @@
 
 
 # Main objective is to build a program that works out whether if a given year is a leap year, according to the video instructions;
-# Link of the video is : https://www.udemy.com/course/100-days-of-code/learn/lecture/40101222#overview(Course enrolling is mandatory)
+# Link of the video is : https://www.udemy.com/course/100-days-of-code/learn/lecture/40101222#overview (Course enrolling is mandatory)
 
 
 #Do not edit this part of code :
