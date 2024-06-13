@@ -30,7 +30,7 @@ value_e = full_names.count('e')
 
 total_love = value_l + value_o + value_v + value_e
 
-#Conversion to string and concatentation
+#Conversion to string and concatentation 
 concatenation_love_value = str(total_true) + str(total_love)
 print(type(concatenation_love_value))
 
@@ -38,7 +38,7 @@ print(type(concatenation_love_value))
 print(f"Your score is {concatenation_love_value}")
 
 
-## Interpretation :
+## Interpretation and conversions
 if int(concatenation_love_value) < 10 or int(concatenation_love_value) > 90:
     print(f"Score is {concatenation_love_value}, you go together like coke and mentos.")
 elif int(concatenation_love_value) > 40 and int(concatenation_love_value) < 50:
