@@ -1,5 +1,5 @@
 # Main objective is to create a program that automatically prints the FizzBuzz solution, according to the video instructions;
-# Link of the video is : https://www.udemy.com/course/100-days-of-code/learn/lecture/40101302#overview (Course enrolling is mandatory)
+# Link of the video is : https://www.udemy.com/course/100-days-of-code/learn/lecture/40101308#overview (Course enrolling is mandatory)
 
 
 
