@@ -10,11 +10,21 @@ for n in range(0, len(student_scores)):
 # The Edit side :
 high_value = student_scores[0]
 
+# I used the range function : (I had no clue if we needed to use, or nah.)
 for n in range(0, len(student_scores) - 1):
         if student_scores[n] > student_scores[n + 1] :
             high_value = student_scores[n]
         else:
             high_value = student_scores[n+1]
 
+
+print(f"The highest score in the class is: {high_value}")
+
+
+# Second alternative for the Loop "for" :
+
+for score in student_scores:
+    if score > high_value:
+          high_value = score
 
 print(f"The highest score in the class is: {high_value}")
