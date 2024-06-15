@@ -7,23 +7,26 @@ import random
 
 world_list = ["ardvark", "baboon", "camel"]
 display = []
+blank = "_"
 
 
 chosen_word = random.choice(world_list)
 print(f"Purpose for testing: {chosen_word}")
 
 
-guess = input("Guess a letter: ")
-guess = guess.lower()
 
 for letter in chosen_word:
     letter_display = "_"
     display.append(letter_display)
 
 
-for index in range(0, len(chosen_word)):
-    if guess in chosen_word[index]:
-        display.pop(index)
-        display.insert(index, guess)
+while blank in display:
+    letter_entry = input("Guess a letter: ")
+    letter_entry = letter_entry.lower()
+    for index in range(0, len(chosen_word)):
+        if letter_entry in chosen_word[index]:
+            display.pop(index)
+            display.insert(index, letter_entry)
+    print(display)
 
-print(display)
+print("You win.")
