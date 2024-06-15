@@ -6,15 +6,24 @@ import random
 
 
 world_list = ["ardvark", "baboon", "camel"]
+display = []
+
 
 chosen_word = random.choice(world_list)
+print(f"Purpose for testing: {chosen_word}")
 
 
 guess = input("Guess a letter: ")
 guess = guess.lower()
 
 for letter in chosen_word:
-    if letter == guess:
-        print('Right')
-    else:
-        print('Wrong')
+    letter_display = "_"
+    display.append(letter_display)
+
+
+for index in range(0, len(chosen_word)):
+    if guess in chosen_word[index]:
+        display.pop(index)
+        display.insert(index, guess)
+
+print(display)
