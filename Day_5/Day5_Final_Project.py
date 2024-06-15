@@ -13,33 +13,25 @@ number_letters = int(input("How many letters would you like in your password ? \
 number_of_numbers = int(input("How many numbers would you like in your password ? \n"))
 number_symbols = int(input("How many symbols would you like in your password ? \n"))
 
-new_letters = []
-new_numbers = []
-new_symbols = []
+password_list = []
 
 
 for input_value in range(0,number_letters):
     letter_random = letters[random.randrange(0,len(letters))]
-    new_letters.append(letter_random)
+    password_list.append(letter_random)
 
 for input_value in range(0,number_of_numbers):
     number_random = numbers[random.randrange(0,len(numbers))]
-    new_numbers.append(number_random)
+    password_list.append(number_random)
 
 for input_value in range(0,number_symbols):
     symbol_random = symbols[random.randrange(0,len(symbols))]
-    new_symbols.append(symbol_random)
+    password_list.append(symbol_random)
 
-print(new_letters)
-print(new_numbers)
-print(new_symbols)
+# Do no assign it into a variable, there is no output to expect, since the shuffle does in its place. The key to save the data is make a previous COPY
+random.shuffle(password_list)
+print(password_list)
 
-new_password = new_password.join(new_letters)
-print(new_password)
-new_password = new_password.join(new_numbers)
-print(new_password)
-new_password = new_password.join(new_symbols)
-
-len(new_password)
-print(new_password)
+new_password = new_password.join(password_list)
+print(f"Here is your password: {new_password}")
 
