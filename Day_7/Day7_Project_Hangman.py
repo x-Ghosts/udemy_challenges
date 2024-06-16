@@ -4,29 +4,97 @@
 
 import random
 
-
-world_list = ["ardvark", "baboon", "camel"]
+word_list = ["ardvark", "baboon", "camel"]
 display = []
-blank = "_"
+stages = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
+stages.reverse()
 
-
-chosen_word = random.choice(world_list)
-print(f"Purpose for testing: {chosen_word}")
-
+# Random word choice from the machine.
+chosen_word = random.choice(word_list)
+print(chosen_word)
 
 
 for letter in chosen_word:
-    letter_display = "_"
-    display.append(letter_display)
+    display.append("_")
 
 
-while blank in display:
-    letter_entry = input("Guess a letter: ")
-    letter_entry = letter_entry.lower()
-    for index in range(0, len(chosen_word)):
-        if letter_entry in chosen_word[index]:
-            display.pop(index)
-            display.insert(index, letter_entry)
+# Check the identity match of the letter chosen within the word randomly picked
+def game_process(lifes):
+    for list_index in range(0, len(chosen_word)):
+        if chosen_word[list_index] == guess:
+            display.insert(list_index, guess)
+            display.pop(list_index + 1)
+            print(stages[lifes])
+    if guess not in chosen_word:
+        lifes = lifes - 1
+        print(stages[lifes])
+        print(f"Remaining life: {lifes}")
+
     print(display)
+    return lifes
 
-print("You win.")
+
+
+game_running = True
+
+lifes = len(stages) - 1
+while game_running:
+    if "_" not in display:
+        print("You won !")
+        game_running = False
+    elif lifes == 0:
+        print("Game Over !")
+        game_running = False
+    else:
+        guess = input('Guess a letter: ')
+        guess = guess.lower()
+        lifes = game_process(lifes)
