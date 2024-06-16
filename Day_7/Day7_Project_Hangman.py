@@ -31,7 +31,7 @@ def game_process(lifes):
         lifes = lifes - 1
         print(stages[lifes] + "\n")
         print(f"Oops ! The chosen letter '{guess} is not fitting in there ! \nLife Cost : 1. \nRemaining life: {lifes}.\n")
-    if guess in display:
+    if guess in chosen_word:
         print(f"You already chose the letter '{guess}' previously.\n")
 
     print(display)
