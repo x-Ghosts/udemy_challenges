@@ -3,60 +3,13 @@
 
 
 import random
+import words_list
+from words_list import words
+from stages import stages, logo
 
-word_list = ["ardvark", "baboon", "camel"]
+
+word_list = words_list.words
 display = []
-stages = ['''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========''']
-stages.reverse()
 
 # Random word choice from the machine.
 chosen_word = random.choice(word_list)
@@ -73,11 +26,13 @@ def game_process(lifes):
         if chosen_word[list_index] == guess:
             display.insert(list_index, guess)
             display.pop(list_index + 1)
-            print(stages[lifes])
+            print(stages[lifes] + "\n")
     if guess not in chosen_word:
         lifes = lifes - 1
-        print(stages[lifes])
-        print(f"Remaining life: {lifes}")
+        print(stages[lifes] + "\n")
+        print(f"Oops ! The chosen letter '{guess} is not fitting in there ! \nLife Cost : 1. \nRemaining life: {lifes}.\n")
+    if guess in display:
+        print(f"You already chose the letter '{guess}' previously.\n")
 
     print(display)
     return lifes
@@ -87,14 +42,15 @@ def game_process(lifes):
 game_running = True
 
 lifes = len(stages) - 1
+print(logo)
 while game_running:
     if "_" not in display:
-        print("You won !")
+        print("\nYou won !")
         game_running = False
     elif lifes == 0:
-        print("Game Over !")
+        print("\nGame Over !")
         game_running = False
     else:
-        guess = input('Guess a letter: ')
+        guess = input('\nGuess a letter: ')
         guess = guess.lower()
         lifes = game_process(lifes)
