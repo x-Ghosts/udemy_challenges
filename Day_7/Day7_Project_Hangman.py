@@ -14,7 +14,6 @@ previous_guesses = [] #this to track previous user guesses
 
 # Random word choice from the machine.
 chosen_word = random.choice(word_list)
-print(chosen_word)
 
 
 for letter in chosen_word:
