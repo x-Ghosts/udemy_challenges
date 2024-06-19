@@ -7,23 +7,16 @@ shifted_alphabet = alphabet.copy()
 encoded_output = []
 
 
+
 direction = input("Type 'encode' to encrypt, or decode to 'decrypt': \n")
 text = input("Write the message: \n").lower()
 shift = int(input("Type the shift number: \n"))
 
 
 
-'''def encrypt(text, shift):
-    for letter in text:
-        if letter in alphabet:
-            index = alphabet.index(letter)
-            print(index)
-            new_alphabet = alphabet[index + shift]
-            new_format.append(new_alphabet)
-    print(new_format)'''
-
-def encrypt2(text,shift):
+def encrypt(text,shift):
     count = 0
+    encoded_message = ''
     while not count == shift:
         for i in range (0, shift,1):
             count += 1
@@ -32,20 +25,23 @@ def encrypt2(text,shift):
     #For purpose of checking if things goes good
     print(alphabet)
     print(shifted_alphabet)
-    '''for letters in alphabet:
-        for msg_letter in text:
-            if msg_letter == letters:
-                letter_index = alphabet.index(letters)
-                encoded_letter = shifted_alphabet[letter_index]
-                encoded_output.append(encoded_letter)'''
     for letters in text:
-        index = alphabet.index(letters)
-        encoded_letter = shifted_alphabet[index]
-        encoded_output.append(encoded_letter)
+        if letters in alphabet:
+            index = alphabet.index(letters)
+            encoded_letter = shifted_alphabet[index]
+            encoded_output.append(encoded_letter)
+        else:
+            index = text.index(letters)
+            encoded_output.insert(index, letters)
+
+
+
     print(encoded_output)
+    encoded_message = encoded_message.join(encoded_output)
+    print(f"The encoded message is {str(encoded_message)}")
 
         
 
 
 if direction.lower() == 'encode':
-    encrypt2(text, shift)
+    encrypt(text, shift)
