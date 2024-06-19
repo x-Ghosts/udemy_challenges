@@ -13,13 +13,7 @@ decoded_output = []
 stop_program = False
 
 
-
-direction = input("Type 'encode' to encrypt, or 'decode' to decrypt: \n")
-text = input("Write the message: \n").lower()
-shift = int(input("Type the shift number: \n"))
-
-
-
+# We have a dynamic change on our lists, I need to find a way to adapt to it.
 def caeser(direction, text, shift):
     count = 0
     encoded_message = ''
@@ -61,15 +55,20 @@ def caeser(direction, text, shift):
         print(f"The decoded message is {str(decoded_message)}.")
 
 
-caeser(direction, text, shift)
+
+
+
 
 while stop_program == False:
 
+    direction = input("Type 'encode' to encrypt, or 'decode' to decrypt: \n")
+    text = input("Write the message: \n").lower()
+    shift = int(input("Type the shift number: \n"))
+    caeser(direction, text, shift)
     user_input = input("Type 'yes' if you want to go again. Otherwise, type 'no'.")
     if user_input.lower() == 'yes':
-        direction = input("Type 'encode' to encrypt, or 'decode' to decrypt: \n")
-        text = input("Write the message: \n").lower()
-        shift = int(input("Type the shift number: \n"))
+        alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
+        shifted_alphabet = alphabet.copy()
         caeser(direction, text, shift)
         stop_program = False
     else:
