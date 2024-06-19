@@ -22,9 +22,6 @@ def encrypt(text,shift):
             count += 1
             letter = shifted_alphabet.pop(0)
             shifted_alphabet.append(letter)
-    #For purpose of checking if things goes good
-    print(alphabet)
-    print(shifted_alphabet)
     for letters in text:
         if letters in alphabet:
             index = alphabet.index(letters)
@@ -33,12 +30,9 @@ def encrypt(text,shift):
         else:
             index = text.index(letters)
             encoded_output.insert(index, letters)
-
-
-
-    print(encoded_output)
+    
     encoded_message = encoded_message.join(encoded_output)
-    print(f"The encoded message is {str(encoded_message)}")
+    print(f"The encoded message is {str(encoded_message)}.")
 
         
 
