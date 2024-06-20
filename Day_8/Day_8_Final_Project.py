@@ -18,6 +18,8 @@ def caeser(direction, text, shift):
     count = 0
     encoded_message = ''
     decoded_message = ''
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
+    shifted_alphabet = alphabet.copy()
     if direction.lower() == 'encode':
         while not count == shift:
             for i in range (0, shift,1):
@@ -67,8 +69,6 @@ while stop_program == False:
     caeser(direction, text, shift)
     user_input = input("Type 'yes' if you want to go again. Otherwise, type 'no'.")
     if user_input.lower() == 'yes':
-        alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
-        shifted_alphabet = alphabet.copy()
         caeser(direction, text, shift)
         stop_program = False
     else:
