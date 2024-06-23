@@ -22,7 +22,6 @@ def bid_input(name, bid):
     print(auction)
 
 bid_input(name, bid)
-print(auction_list)
 
 while stop_program == False:
     multiple_bidders = input("Are there any other bidders? Type 'yes' or 'no'. \n")
@@ -31,7 +30,7 @@ while stop_program == False:
         name = input("What's your name ? ")
         bid = float(input("What's your bid ? $"))
         bid_input(name, bid)
-        print(auction_list)
+    
     elif multiple_bidders.lower() == 'no':
         system('cls')
         auction_max_value = 0
