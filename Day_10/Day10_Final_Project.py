@@ -36,9 +36,9 @@ for key in operations:
 
 math_operation_input = input("Pick an operation from the line above: ")
 # To correct down the mistakes
-answer = 9
-test = 2
+
 operation = operations[key]
+answer = operation(num1, num2)
 
 
 print(f"{num1} {math_operation_input} {num2} = {answer}")
