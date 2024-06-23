@@ -30,9 +30,9 @@ while stop_program == False:
         print(auction_list)
     elif multiple_bidders.lower() == 'no':
         auction_max_value = 0
-        for auctions in auction_list:
-            if auctions['bid'] > auction_max_value:
-                index = auction_list.index()
-                auction_max_value = auctions['bid']
-        print(f"The winner is {auction_list[index]['name']} with ${auction_max_value}.")
+        for i in range (0, len(auction_list)):
+            if auction_list[i]['bid'] > auction_max_value:
+                index_max = i
+                auction_max_value = auction_list[i]['bid']
+        print(f"The winner is '{auction_list[index_max]['name']}' with ${auction_max_value}.")
         stop_program = True
