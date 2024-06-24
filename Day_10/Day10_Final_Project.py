@@ -18,8 +18,6 @@ def div(n1, n2):
     return n1 / n2
 
 
-
-
 operations = {
     "+": add,
     "-": sub,
@@ -27,26 +25,27 @@ operations = {
     "/": div
 }
 
-num1 = int(input("What's your first number? "))
-
-for key in operations:
-    print(key)
-
-math_operation_input = input("Pick an operation from the line above: ")
-
-num2 = int(input("What's your second number? "))
 
 
-new_operation = operations[math_operation_input]
-answer = new_operation(num1, num2)
+def initiate_calculator():
+    num1 = int(input("What's your first number? "))
+    for key in operations:
+        print(key)
+    math_operation_input = input("Pick an operation from the line above: ")
+    num2 = int(input("What's your second number? "))
+    new_operation = operations[math_operation_input]
+    answer = new_operation(num1, num2)
+    print(f"{num1} {math_operation_input} {num2} = {answer}")
+    return answer
 
 
-print(f"{num1} {math_operation_input} {num2} = {answer}")
 
 
+answer = initiate_calculator()
 while stop_program == False:
     user_input = input(f"Type 'y' to continue calculating with {answer}, or type 'n' to exit: ")
     if user_input.lower() == 'y':
+        #operation_with_continuous_result()
         old_result = answer
         math_operation_input = input("Pick an new operation: ")
         num3 = int(input("What's your third number? "))
