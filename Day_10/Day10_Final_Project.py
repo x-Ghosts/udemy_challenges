@@ -42,3 +42,12 @@ answer = new_operation(num1, num2)
 
 
 print(f"{num1} {math_operation_input} {num2} = {answer}")
+
+math_operation_input = input("Pick an new operation: ")
+num3 = int(input("What's your third number? "))
+
+new_operation = operations[math_operation_input]
+new_answer = new_operation(answer, num3)
+
+
+print(f"{answer} {math_operation_input} {num3} = {new_answer}")
