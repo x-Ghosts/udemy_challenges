@@ -2,7 +2,7 @@
 # Link of the video is : https://www.udemy.com/course/100-days-of-code/learn/lecture/40101576#overview (Course enrolling is mandatory)
 
 
-
+stop_program = False
 
 # Mathematical Operation
 def add(n1, n2):
@@ -43,11 +43,16 @@ answer = new_operation(num1, num2)
 
 print(f"{num1} {math_operation_input} {num2} = {answer}")
 
-math_operation_input = input("Pick an new operation: ")
-num3 = int(input("What's your third number? "))
 
-new_operation = operations[math_operation_input]
-new_answer = new_operation(answer, num3)
-
-
-print(f"{answer} {math_operation_input} {num3} = {new_answer}")
+while stop_program == False:
+    user_input = input(f"Type 'y' to continue calculating with {answer}, or type 'n' to exit: ")
+    if user_input.lower() == 'y':
+        old_result = answer
+        math_operation_input = input("Pick an new operation: ")
+        num3 = int(input("What's your third number? "))
+        new_operation = operations[math_operation_input]
+        new_answer = new_operation(old_result, num3)
+        answer = new_answer
+        print(f"{old_result} {math_operation_input} {num3} = {answer}")
+    else:
+        stop_program = True
