@@ -1,6 +1,8 @@
 # Main objective is to create a calculator program, according to the video instructions;
 # Link of the video is : https://www.udemy.com/course/100-days-of-code/learn/lecture/40101576#overview (Course enrolling is mandatory)
 
+from ascii_art import logo
+print(logo)
 
 stop_program = False
 
@@ -28,11 +30,11 @@ operations = {
 
 
 def initiate_calculator():
-    num1 = int(input("What's your first number? "))
+    num1 = float(input("What's your first number? "))
     for key in operations:
         print(key)
     math_operation_input = input("Pick an operation from the line above: ")
-    num2 = int(input("What's your second number? "))
+    num2 = float(input("What's your second number? "))
     new_operation = operations[math_operation_input]
     answer = new_operation(num1, num2)
     print(f"{num1} {math_operation_input} {num2} = {answer}")
@@ -48,7 +50,7 @@ while stop_program == False:
         #operation_with_continuous_result()
         old_result = answer
         math_operation_input = input("Pick an new operation: ")
-        num3 = int(input("What's your third number? "))
+        num3 = float(input("What's your third number? "))
         new_operation = operations[math_operation_input]
         new_answer = new_operation(old_result, num3)
         answer = new_answer
